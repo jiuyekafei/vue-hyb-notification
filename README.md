@@ -3,7 +3,7 @@
 
 # Demo
 
-[Demo page](https://jiuyekafei.github.io/vue-hyb-notification/index.html) 
+[Demo page](https://jiuyekafei.github.io/vue-hyb-notification) 
 
 
 
