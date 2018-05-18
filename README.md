@@ -38,11 +38,11 @@ export default {
 	},
 	methods : {
 		send(time){
-			this.$notify({ type : 'warning' ,title : 'title' ,content : 'content' ,isautoclose : false});
+			this.$notify({ type : 'warning' ,title : 'title' ,content : 'content' });
 			// or
 			this.$notify({ title : 'title' ,content : 'content' ,duration : 2500 });
 			// or
-			this.$notify({ title : 'title' ,content : 'content' ,isautoclose : false});
+			this.$notify({ title : 'title' ,content : 'content' ,isautoclose : true});
 		}
 	}
 }
