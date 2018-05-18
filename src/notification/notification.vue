@@ -68,7 +68,7 @@ export default {
 		height : 93px;
 	}
 	i.msg{
-		background-position  : 0 -25px;
+		background-position  : 0 -24px;
 		width : 20px;
 		height : 20px;
 	}
@@ -83,7 +83,7 @@ export default {
 		height : 20px;
 	}
 	i.warning{
-		background-position  : 0 -74px;
+		background-position  : 0 -73px;
 		width : 20px;
 		height : 20px;
 	}

@@ -12,7 +12,7 @@ const Notification = (options)=>{
 		content : '',
 		type : '',
 		top : 10,
-		isautoclose : true,
+		isautoclose : false,
 		duration : 2500
 	} ,options);
 

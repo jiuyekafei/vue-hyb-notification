@@ -38,9 +38,11 @@ export default {
 	},
 	methods : {
 		send(time){
-			this.$notify({ title : 'title' ,content : 'content' ,isautoclose : false});
+			this.$notify({ type : 'warning' ,title : 'title' ,content : 'content' ,isautoclose : false});
 			// or
 			this.$notify({ title : 'title' ,content : 'content' ,duration : 2500 });
+			// or
+			this.$notify({ title : 'title' ,content : 'content' ,isautoclose : false});
 		}
 	}
 }
@@ -63,9 +65,12 @@ duration(disappear time)   default  2500
 ```
 * isautoclose
 ```
-isautoclose(Disappear automatically)   true or false  , default true
+isautoclose(Disappear automatically)   true or false  , default false
 ```
-
+* type
+```
+type   msg or error or success or warning  ,default no
+```
 # License
 
 [The MIT License](http://opensource.org/licenses/MIT)

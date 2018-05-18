@@ -28,10 +28,10 @@ export default {
 	},
 	methods : {
 		aaa(){
-			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,isautoclose : false});
+			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,duration : this.time});
 		},
 		bbb(){
-			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,duration : this.time});
+			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,isautoclose : true});
 		}
 	}
 }
