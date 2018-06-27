@@ -12,6 +12,7 @@
 		</select></p>
 		<button @click="aaa">增加一个不能自动关闭的消息</button>
 		<button @click="bbb">增加一个自动关闭的消息</button>
+		<button @click="ddd">增加一个自动关闭的消息 并且点击内容有回调函数</button>
 	</div>
 </template>
 
@@ -27,15 +28,25 @@ export default {
 		}
 	},
 	methods : {
+		ccc(){
+			alert('callback');
+		},
 		aaa(){
-			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,duration : this.time});
+			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,duration : this.time });
 		},
 		bbb(){
-			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,isautoclose : true});
+			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,isautoclose : true });
+		},
+		ddd(){
+			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,duration : this.time ,fn : this.ccc});
 		}
 	}
 }
 </script>
 
 <style lang="scss">
+	button{
+		display : block;
+		margin-bottom : 10px;
+	}
 </style>

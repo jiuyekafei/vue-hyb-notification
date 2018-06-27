@@ -13,10 +13,16 @@ const Notification = (options)=>{
 		type : '',
 		top : 10,
 		isautoclose : false,
-		duration : 2500
+		duration : 2500,
+		fn : ''
 	} ,options);
 
 	options.onClose = ()=>{
+		Notification.onClose(id);
+	}
+
+	options.routeGo = ()=>{ 
+		Notification.routeGo(options.fn)
 		Notification.onClose(id);
 	}
 
@@ -49,6 +55,10 @@ const Notification = (options)=>{
 
 	instances.push(instance);
 	return instance.vm;
+}
+
+Notification.routeGo =(cb)=>{
+	typeof cb=='function' && cb();
 }
 
 Notification.onClose = (id)=>{

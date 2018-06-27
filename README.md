@@ -71,6 +71,10 @@ isautoclose(Disappear automatically)   true or false  , default false
 ```
 type   msg or error or success or warning  ,default no
 ```
+* fn
+```
+fn   callback
+```
 # License
 
 [The MIT License](http://opensource.org/licenses/MIT)

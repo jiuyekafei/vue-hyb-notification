@@ -8,7 +8,8 @@
 					</span>
 					<b @click="close"></b>
 				</p>
-				<p class="content">{{content}}</p>
+				<p class="content go" v-if="fn" @click="go">{{content}}</p>
+				<p class="content" v-else>{{content}}</p>
 			</div>
 		</div>
 	</transition>
@@ -23,9 +24,11 @@ export default {
 			content : '',
 			type : '',
 			onClose : null,
+			routeGo : null,
 			visible : true,
 			isclose : false,
 			posTop : '',
+			fn : '',
 			typearray : ['msg' ,'error' ,'success' ,'warning']
 		}
 	},
@@ -50,6 +53,9 @@ export default {
 		close (){
 			this.isclose = true;
 			this.onClose();
+		},
+		go (){
+			this.routeGo();
 		}
 	}
 }
@@ -91,6 +97,9 @@ export default {
 		position : fixed;
 		right : 10px;
 		transition : top .5s;
+	}
+	.notification .go{
+		cursor : pointer;
 	}
 	.notification div.content{
 		margin : 0;
