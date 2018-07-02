@@ -32,13 +32,13 @@ export default {
 			alert('callback');
 		},
 		aaa(){
-			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,duration : this.time });
+			this.$notify({ type : this.selected ,title : this.title ,content : [{ text:this.content }] ,duration : this.time });
 		},
 		bbb(){
-			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,isautoclose : true });
+			this.$notify({ type : this.selected ,title : this.title ,content : [{ text:this.content }] ,isautoclose : true });
 		},
 		ddd(){
-			this.$notify({ type : this.selected ,title : this.title ,content : this.content ,duration : this.time ,fn : this.ccc});
+			this.$notify({ type : this.selected ,title : this.title ,content : [{ text:this.content ,fn : this.ccc } ,{text : "other message"}] ,duration : this.time});
 		}
 	}
 }

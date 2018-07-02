@@ -34,15 +34,19 @@ Vue.use(notification);
 export default {
 	name: 'App',
 	data (){
-		return {}
 	},
 	methods : {
+		ccc (){
+			alert('callback')
+		},
 		send(time){
 			this.$notify({ type : 'warning' ,title : 'title' ,content : 'content' });
 			// or
 			this.$notify({ title : 'title' ,content : 'content' ,duration : 2500 });
 			// or
 			this.$notify({ title : 'title' ,content : 'content' ,isautoclose : true});
+			//or
+			this.$notify({ type : "warning" ,title : "title" ,content : [{ text : "content" ,fn : this.ccc } ,{ text : "other message" }] ,duration : 2500 });
 		}
 	}
 }
@@ -57,7 +61,7 @@ title   title
 ```
 * content  
 ```
-content  content 
+content  Array  
 ```
 * duration 
 ```
@@ -70,10 +74,6 @@ isautoclose(Disappear automatically)   true or false  , default false
 * type
 ```
 type   msg or error or success or warning  ,default no
-```
-* fn
-```
-fn   callback
 ```
 # License
 

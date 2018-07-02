@@ -9,7 +9,7 @@ const Notification = (options)=>{
 
 	options = Object.assign({
 		title : '',
-		content : '',
+		content : [],
 		type : '',
 		top : 10,
 		isautoclose : false,
@@ -18,11 +18,6 @@ const Notification = (options)=>{
 	} ,options);
 
 	options.onClose = ()=>{
-		Notification.onClose(id);
-	}
-
-	options.routeGo = ()=>{ 
-		Notification.routeGo(options.fn)
 		Notification.onClose(id);
 	}
 
@@ -55,10 +50,6 @@ const Notification = (options)=>{
 
 	instances.push(instance);
 	return instance.vm;
-}
-
-Notification.routeGo =(cb)=>{
-	typeof cb=='function' && cb();
 }
 
 Notification.onClose = (id)=>{

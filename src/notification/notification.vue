@@ -8,8 +8,10 @@
 					</span>
 					<b @click="close"></b>
 				</p>
-				<p class="content go" v-if="fn" @click="go">{{content}}</p>
-				<p class="content" v-else>{{content}}</p>
+				<p>
+					<span v-for="(item, key ,index) in content" v-if="item.fn " class="go" @click="go(item.fn)">{{item.text}}</span>
+					<span v-else>{{item.text}}</span>
+				</p>
 			</div>
 		</div>
 	</transition>
@@ -21,10 +23,9 @@ export default {
 	data () {
 		return {
 			title : '',
-			content : '',
+			content : [],
 			type : '',
 			onClose : null,
-			routeGo : null,
 			visible : true,
 			isclose : false,
 			posTop : '',
@@ -47,6 +48,9 @@ export default {
 		},
 		typeclass (){ 
 			return this.typearray.includes(this.type) ? `icon ${this.type}` : '';
+		},
+		isfn (fn){
+			return typeof fn == 'function';
 		}
 	},
 	methods : {
@@ -54,8 +58,9 @@ export default {
 			this.isclose = true;
 			this.onClose();
 		},
-		go (){
-			this.routeGo();
+		go(fn){
+			fn();
+			this.onClose();
 		}
 	}
 }
@@ -100,6 +105,7 @@ export default {
 	}
 	.notification .go{
 		cursor : pointer;
+		color : #54D4E0;
 	}
 	.notification div.content{
 		margin : 0;
